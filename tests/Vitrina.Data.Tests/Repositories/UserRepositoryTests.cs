@@ -17,9 +17,9 @@ public sealed class UserRepositoryTests
 		var repository = new UserRepository(context);
 		var user = new User
 		{
-			Name = "Admin User",
-			Email = "admin@vitrina.dev",
-			Username = "admin",
+			Name = "Test Admin User",
+			Email = "test-admin@vitrina.dev",
+			Username = "test-admin",
 			PasswordHash = "HASHED-PASSWORD",
 			Role = UserRole.Admin,
 			CreatedAt = new DateTime(2025, 5, 4, 10, 0, 0, DateTimeKind.Utc)
@@ -28,8 +28,8 @@ public sealed class UserRepositoryTests
 		await repository.AddAsync(user);
 		await context.SaveChangesAsync();
 
-		var byEmail = await repository.GetByEmailAsync("admin@vitrina.dev");
-		var byUsername = await repository.GetByUsernameAsync("admin");
+		var byEmail = await repository.GetByEmailAsync("test-admin@vitrina.dev");
+		var byUsername = await repository.GetByUsernameAsync("test-admin");
 
 		Assert.NotNull(byEmail);
 		Assert.NotNull(byUsername);
