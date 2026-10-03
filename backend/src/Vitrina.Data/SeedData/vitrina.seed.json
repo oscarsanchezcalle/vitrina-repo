@@ -1,0 +1,144 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Noise-Canceling Headphones",
+      "description": "Premium over-ear headphones with active noise cancellation and all-day battery life.",
+      "price": 249.99,
+      "stock": 35,
+      "category": "Audio",
+      "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80",
+      "isActive": true,
+      "createdAt": "2025-01-05T09:00:00Z",
+      "updatedAt": null
+    },
+    {
+      "id": 2,
+      "name": "4K Portable Monitor",
+      "description": "Slim 15.6-inch USB-C portable monitor for working on the go.",
+      "price": 329.00,
+      "stock": 18,
+      "category": "Accessories",
+      "imageUrl": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=1200&q=80",
+      "isActive": true,
+      "createdAt": "2025-01-12T10:30:00Z",
+      "updatedAt": null
+    },
+    {
+      "id": 3,
+      "name": "Mechanical Keyboard",
+      "description": "Compact mechanical keyboard with hot-swappable switches and RGB backlight.",
+      "price": 129.50,
+      "stock": 42,
+      "category": "Computing",
+      "imageUrl": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?auto=format&fit=crop&w=1200&q=80",
+      "isActive": true,
+      "createdAt": "2025-01-20T14:00:00Z",
+      "updatedAt": null
+    },
+    {
+      "id": 4,
+      "name": "Smart Fitness Watch",
+      "description": "Health-focused smartwatch with heart rate tracking, GPS, and sleep analytics.",
+      "price": 199.99,
+      "stock": 27,
+      "category": "Wearables",
+      "imageUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80",
+      "isActive": true,
+      "createdAt": "2025-02-01T08:15:00Z",
+      "updatedAt": null
+    },
+    {
+      "id": 5,
+      "name": "Ergonomic Office Chair",
+      "description": "Adjustable office chair with lumbar support and breathable mesh back.",
+      "price": 289.00,
+      "stock": 12,
+      "category": "Office",
+      "imageUrl": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+      "isActive": true,
+      "createdAt": "2025-02-10T11:45:00Z",
+      "updatedAt": null
+    },
+    {
+      "id": 6,
+      "name": "Wireless Charging Stand",
+      "description": "Fast charging stand compatible with modern phones and earbuds cases.",
+      "price": 39.90,
+      "stock": 65,
+      "category": "Accessories",
+      "imageUrl": "https://images.unsplash.com/photo-1612817159949-3f7d9b07c9c6?auto=format&fit=crop&w=1200&q=80",
+      "isActive": true,
+      "createdAt": "2025-02-18T16:20:00Z",
+      "updatedAt": null
+    },
+    {
+      "id": 7,
+      "name": "USB-C Docking Station",
+      "description": "Multi-port docking station with HDMI, Ethernet, and card reader support.",
+      "price": 149.95,
+      "stock": 21,
+      "category": "Computing",
+      "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+      "isActive": true,
+      "createdAt": "2025-03-03T12:00:00Z",
+      "updatedAt": null
+    },
+    {
+      "id": 8,
+      "name": "Bluetooth Speaker",
+      "description": "Portable speaker with balanced sound, water resistance, and 20-hour battery.",
+      "price": 89.99,
+      "stock": 54,
+      "category": "Audio",
+      "imageUrl": "https://images.unsplash.com/photo-1518441902117-f0a6a3f0d5b2?auto=format&fit=crop&w=1200&q=80",
+      "isActive": true,
+      "createdAt": "2025-03-14T13:30:00Z",
+      "updatedAt": null
+    },
+    {
+      "id": 9,
+      "name": "Desk Lamp with USB Port",
+      "description": "LED desk lamp with adjustable brightness and built-in USB charging port.",
+      "price": 54.75,
+      "stock": 40,
+      "category": "Office",
+      "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+      "isActive": true,
+      "createdAt": "2025-04-01T09:40:00Z",
+      "updatedAt": null
+    },
+    {
+      "id": 10,
+      "name": "Gaming Mouse",
+      "description": "High precision gaming mouse with programmable buttons and low-latency sensor.",
+      "price": 74.25,
+      "stock": 48,
+      "category": "Computing",
+      "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=1200&q=80",
+      "isActive": true,
+      "createdAt": "2025-04-12T15:00:00Z",
+      "updatedAt": null
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@vitrina.dev",
+      "username": "admin",
+      "passwordHash": "HASHED-ADMIN-PASSWORD",
+      "role": 1,
+      "createdAt": "2025-01-01T08:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Regular User",
+      "email": "user@vitrina.dev",
+      "username": "user",
+      "passwordHash": "HASHED-USER-PASSWORD",
+      "role": 2,
+      "createdAt": "2025-01-01T08:05:00Z"
+    }
+  ]
+}
