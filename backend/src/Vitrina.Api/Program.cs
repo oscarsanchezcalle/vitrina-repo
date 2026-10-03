@@ -1,11 +1,13 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Vitrina.Api.Middleware;
 using Vitrina.Api.Options;
 using Vitrina.Api.Services.Authentication;
 using Vitrina.Business.Extensions;
+using Vitrina.Data.Context;
 using Vitrina.Data.Extensions;
 using Vitrina.Dto.Common;
 
@@ -75,12 +77,22 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+try
+{
+    using var scope = app.Services.CreateScope();
+    var dbContext = scope.ServiceProvider.GetRequiredService<VitrinaDbContext>();
+    await dbContext.Database.MigrateAsync();
+}
+catch (Exception ex)
+{
+    app.Logger.LogCritical(ex, "Database initialization failed.");
+    throw new InvalidOperationException("Database initialization failed. Check the connection string and database server configuration.", ex);
+}
 
+app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
 
 app.UseSwagger();
 app.UseSwaggerUI();
-
 
 app.UseAuthentication();
 app.UseAuthorization();
