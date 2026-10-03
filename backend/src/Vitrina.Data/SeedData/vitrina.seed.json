@@ -127,7 +127,7 @@
       "name": "Admin User",
       "email": "admin@vitrina.dev",
       "username": "admin",
-      "passwordHash": "HASHED-ADMIN-PASSWORD",
+      "passwordHash": "PBKDF2$100000$M2sLSVWCKjmNAWrhiLff2Q==$c3UWlPye+02m+RWkGYCP9nqGU1Cmb5MpNm1D23KpqK8=",
       "role": 1,
       "createdAt": "2025-01-01T08:00:00Z"
     },
@@ -136,7 +136,7 @@
       "name": "Regular User",
       "email": "user@vitrina.dev",
       "username": "user",
-      "passwordHash": "HASHED-USER-PASSWORD",
+      "passwordHash": "PBKDF2$100000$yy8A999moS2/LzRxBqAfZQ==$uOMR3XbgOSu80whbJREikbZrV+3g6HfN1OsY0p1RsLo=",
       "role": 2,
       "createdAt": "2025-01-01T08:05:00Z"
     }
