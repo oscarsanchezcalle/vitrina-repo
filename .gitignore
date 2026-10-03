@@ -1,0 +1,52 @@
+# Visual Studio / .NET
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+**/bin/
+**/obj/
+
+# Test / coverage artifacts
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+
+# Logs
+*.log
+
+# Rider / ReSharper
+.idea/
+*.DotSettings.user
+
+# VS Code
+.vscode/
+
+# NuGet
+*.nupkg
+*.snupkg
+
+# ASP.NET / local settings
+appsettings.Local.json
+appsettings.Development.json
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Docker / local data
+*.db
+*.mdf
+*.ldf
+
+# Angular / frontend
+node_modules/
+dist/
+build/
+coverage/
+.tmp/
+.angular/
