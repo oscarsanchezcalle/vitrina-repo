@@ -16,9 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Vitrina.Business\Vitrina.Business.csproj" />
-    <ProjectReference Include="..\Vitrina.Dto\Vitrina.Dto.csproj" />
-    <ProjectReference Include="..\Vitrina.Data\Vitrina.Data.csproj" />
+    <ProjectReference Include="..\2. Vitrina.Business\Vitrina.Business.csproj" />
+    <ProjectReference Include="..\3. Vitrina.Dto\Vitrina.Dto.csproj" />
+    <ProjectReference Include="..\4. Vitrina.Data\Vitrina.Data.csproj" />
   </ItemGroup>
 
 </Project>
+

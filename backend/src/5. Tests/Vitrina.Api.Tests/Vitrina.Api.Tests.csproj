@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\backend\src\Vitrina.Api\Vitrina.Api.csproj" />
+    <ProjectReference Include="..\..\1. Vitrina.Api\Vitrina.Api.csproj" />
   </ItemGroup>
 
 </Project>

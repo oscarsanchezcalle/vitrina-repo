@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\backend\src\Vitrina.Data\Vitrina.Data.csproj" />
+    <ProjectReference Include="..\..\4. Vitrina.Data\Vitrina.Data.csproj" />
   </ItemGroup>
 
 </Project>

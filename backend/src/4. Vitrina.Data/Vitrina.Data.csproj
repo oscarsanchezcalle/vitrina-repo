@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Vitrina.Dto\Vitrina.Dto.csproj" />
+    <ProjectReference Include="..\3. Vitrina.Dto\Vitrina.Dto.csproj" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -23,3 +23,4 @@
   </ItemGroup>
 
 </Project>
+

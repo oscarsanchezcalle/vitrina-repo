@@ -1,8 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Vitrina.Data\Vitrina.Data.csproj" />
-    <ProjectReference Include="..\Vitrina.Dto\Vitrina.Dto.csproj" />
+    <ProjectReference Include="..\4. Vitrina.Data\Vitrina.Data.csproj" />
+    <ProjectReference Include="..\3. Vitrina.Dto\Vitrina.Dto.csproj" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0" />
   </ItemGroup>
 
@@ -13,3 +13,4 @@
   </PropertyGroup>
 
 </Project>
+
