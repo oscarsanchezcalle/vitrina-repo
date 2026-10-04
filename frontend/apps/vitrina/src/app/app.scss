@@ -23,11 +23,16 @@
 
 .app-shell__header {
   align-items: center;
-  border-block-end: 1px solid currentColor;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.12);
+  border-block-end: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   gap: 1rem;
   justify-content: space-between;
   padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .app-shell__brand-group {
@@ -42,6 +47,7 @@
 }
 
 .app-shell__subtitle {
+  color: rgba(248, 250, 252, 0.75);
   margin: 0;
 }
 
@@ -58,12 +64,27 @@
 }
 
 .app-shell__action {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  box-shadow: none;
   cursor: pointer;
   font: inherit;
+  font-weight: 600;
+  min-height: 2.5rem;
+  padding: 0 1.25rem;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    background: #dc2626;
+    border-color: #dc2626;
+    filter: none;
+    transform: translateY(-1px);
+  }
 }
 
 .app-shell__content {
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 @media (max-width: 720px) {

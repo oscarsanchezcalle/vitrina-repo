@@ -6,7 +6,7 @@
 .login-page {
   align-items: center;
   animation: gradient-shift 16s ease infinite;
-  background: linear-gradient(135deg, #1e1b4b, #4c1d95, #be185d, #0ea5e9);
+  background: linear-gradient(135deg, #0b1220, #111c33, #1e3a8a, #0f2447);
   background-size: 300% 300%;
   color: #f8fafc;
   display: grid;
@@ -19,7 +19,7 @@
 
 .login-page__blob {
   animation: float 14s ease-in-out infinite;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+  background: radial-gradient(circle at 30% 30%, rgba(96, 165, 250, 0.5), rgba(96, 165, 250, 0));
   border-radius: 50%;
   filter: blur(30px);
   opacity: 0.5;

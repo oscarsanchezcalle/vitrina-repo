@@ -10,8 +10,75 @@
 }
 
 .product-form-shell {
+  animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.45);
   margin: 0 auto;
   max-width: 56rem;
+  padding: 2rem;
+}
+
+.product-form-shell__header h1 {
+  font-size: 1.85rem;
+  letter-spacing: -0.02em;
+}
+
+.product-form-shell__header p {
+  color: rgba(248, 250, 252, 0.8);
+}
+
+.product-form-shell__message {
+  animation: shake 0.4s ease;
+  background: rgba(239, 68, 68, 0.25);
+  border: 1px solid rgba(254, 202, 202, 0.7);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.product-form__field label {
+  font-weight: 600;
+}
+
+.product-form__field small {
+  color: #fecaca;
+  font-weight: 600;
+}
+
+.product-form__toggle input {
+  accent-color: #f472b6;
+  height: 1.25rem;
+  min-height: 0;
+  width: 1.25rem;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-form-shell,
+  .product-form-shell__message {
+    animation: none;
+  }
 }
 
 .product-form-shell__header h1,

@@ -17,7 +17,7 @@
             <h1 id="product-detail-title">{{ currentProduct.name }}</h1>
             <p>{{ currentProduct.category || 'Uncategorized' }}</p>
           </div>
-          <span>{{ currentProduct.isActive ? 'Active' : 'Inactive' }}</span>
+          <span class="badge" [class.badge--inactive]="!currentProduct.isActive">{{ currentProduct.isActive ? 'Active' : 'Inactive' }}</span>
         </div>
 
         <p>{{ currentProduct.description || 'No description provided.' }}</p>

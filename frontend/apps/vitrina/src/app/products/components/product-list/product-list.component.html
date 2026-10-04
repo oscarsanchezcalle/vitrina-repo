@@ -50,13 +50,15 @@
       @for (product of products; track product.id) {
         <article class="product-card">
           @if (product.imageUrl) {
-            <img [src]="product.imageUrl" [alt]="product.name" loading="lazy" />
+            <div class="product-card__image">
+              <img [src]="product.imageUrl" [alt]="product.name" loading="lazy" />
+            </div>
           }
 
           <div class="product-card__content">
             <div class="product-card__headline">
               <h2>{{ product.name }}</h2>
-              <span>{{ product.isActive ? 'Active' : 'Inactive' }}</span>
+              <span class="badge" [class.badge--inactive]="!product.isActive">{{ product.isActive ? 'Active' : 'Inactive' }}</span>
             </div>
 
             <dl>
@@ -75,19 +77,21 @@
             </dl>
 
             <div class="product-card__actions">
-              <button type="button" (click)="view.emit(product.id)">View</button>
-
               @if (canManage) {
-                <button type="button" (click)="edit.emit(product.id)">Edit</button>
-                @if (pendingDeleteId === product.id) {
-                  <button type="button" [disabled]="deletingId === product.id" (click)="confirmDelete.emit(product.id)">
-                    {{ deletingId === product.id ? 'Deleting…' : 'Confirm delete' }}
-                  </button>
-                  <button type="button" (click)="cancelDelete.emit()">Cancel</button>
-                } @else {
-                  <button type="button" (click)="requestDelete.emit(product.id)">Delete</button>
-                }
+                <div class="product-card__manage">
+                  <button type="button" class="btn-secondary" (click)="edit.emit(product.id)">Edit</button>
+                  @if (pendingDeleteId === product.id) {
+                    <button type="button" class="btn-danger" [disabled]="deletingId === product.id" (click)="confirmDelete.emit(product.id)">
+                      {{ deletingId === product.id ? 'Deleting…' : 'Confirm delete' }}
+                    </button>
+                    <button type="button" class="btn-secondary" (click)="cancelDelete.emit()">Cancel</button>
+                  } @else {
+                    <button type="button" class="btn-danger" (click)="requestDelete.emit(product.id)">Delete</button>
+                  }
+                </div>
               }
+
+              <button type="button" class="btn-view" (click)="view.emit(product.id)">View</button>
             </div>
           </div>
         </article>

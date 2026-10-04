@@ -8,8 +8,8 @@ body {
 }
 
 body {
-  background: Canvas;
-  color: CanvasText;
+  background: linear-gradient(160deg, #0b1220, #111c33 55%, #16243f) fixed;
+  color: #f1f5f9;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   margin: 0;
 }
@@ -23,4 +23,81 @@ textarea {
 
 a {
   color: inherit;
+}
+
+input,
+select,
+textarea {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 0.75rem;
+  color: #fff;
+  padding: 0 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &:focus {
+    background: rgba(255, 255, 255, 0.24);
+    border-color: #fff;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.25);
+    outline: none;
+  }
+
+  &[aria-invalid='true'] {
+    border-color: #fecaca;
+  }
+}
+
+textarea {
+  padding-block: 0.75rem;
+}
+
+select option {
+  color: #1e1b4b;
+}
+
+button {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border: 0;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+  color: #fff;
+  font-weight: 600;
+  padding: 0 1.1rem;
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+
+  &:hover:not(:disabled) {
+    box-shadow: 0 10px 22px rgba(37, 99, 235, 0.5);
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    cursor: progress;
+    opacity: 0.6;
+  }
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
 }
