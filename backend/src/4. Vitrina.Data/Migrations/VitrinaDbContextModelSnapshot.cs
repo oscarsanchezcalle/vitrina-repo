@@ -22,7 +22,7 @@ namespace Vitrina.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Vitrina.Domain.Entities.Product", b =>
+            modelBuilder.Entity("Vitrina.Data.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -190,7 +190,7 @@ namespace Vitrina.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Vitrina.Domain.Entities.User", b =>
+            modelBuilder.Entity("Vitrina.Data.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
