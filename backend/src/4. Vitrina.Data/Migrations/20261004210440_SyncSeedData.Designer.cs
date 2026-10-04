@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Vitrina.Data.Context;
 
@@ -11,9 +12,11 @@ using Vitrina.Data.Context;
 namespace Vitrina.Data.Migrations
 {
     [DbContext(typeof(VitrinaDbContext))]
-    partial class VitrinaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20261004210440_SyncSeedData")]
+    partial class SyncSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
