@@ -1,0 +1,13 @@
+<app-product-detail
+  [product]="product()"
+  [loading]="loading()"
+  [errorMessage]="errorMessage()"
+  [canManage]="canManage"
+  [confirmDelete]="confirmDelete()"
+  [deleting]="deleting()"
+  (back)="goBack()"
+  (edit)="editProduct()"
+  (requestDelete)="requestDelete()"
+  (cancelDelete)="cancelDelete()"
+  (confirmDeleteRequested)="deleteProduct()"
+></app-product-detail>

@@ -1,0 +1,61 @@
+<section class="product-detail" aria-labelledby="product-detail-title">
+  <button type="button" (click)="back.emit()">Back to products</button>
+
+  @if (loading) {
+    <p aria-live="polite">Loading product details…</p>
+  } @else if (errorMessage) {
+    <div aria-live="assertive" role="alert">{{ errorMessage }}</div>
+  } @else if (product; as currentProduct) {
+    <article class="product-detail__card">
+      @if (currentProduct.imageUrl) {
+        <img [src]="currentProduct.imageUrl" [alt]="currentProduct.name" />
+      }
+
+      <div class="product-detail__content">
+        <div class="product-detail__headline">
+          <div>
+            <h1 id="product-detail-title">{{ currentProduct.name }}</h1>
+            <p>{{ currentProduct.category || 'Uncategorized' }}</p>
+          </div>
+          <span>{{ currentProduct.isActive ? 'Active' : 'Inactive' }}</span>
+        </div>
+
+        <p>{{ currentProduct.description || 'No description provided.' }}</p>
+
+        <dl>
+          <div>
+            <dt>Price</dt>
+            <dd>{{ currentProduct.price | currency }}</dd>
+          </div>
+          <div>
+            <dt>Stock</dt>
+            <dd>{{ currentProduct.stock }}</dd>
+          </div>
+          <div>
+            <dt>Created</dt>
+            <dd>{{ currentProduct.createdAt | date: 'medium' }}</dd>
+          </div>
+          <div>
+            <dt>Updated</dt>
+            <dd>{{ currentProduct.updatedAt ? (currentProduct.updatedAt | date: 'medium') : 'Never' }}</dd>
+          </div>
+        </dl>
+
+        @if (canManage) {
+          <div class="product-detail__actions">
+            <button type="button" (click)="edit.emit()">Edit product</button>
+
+            @if (confirmDelete) {
+              <button type="button" [disabled]="deleting" (click)="confirmDeleteRequested.emit()">
+                {{ deleting ? 'Deleting…' : 'Confirm delete' }}
+              </button>
+              <button type="button" (click)="cancelDelete.emit()">Cancel</button>
+            } @else {
+              <button type="button" (click)="requestDelete.emit()">Delete product</button>
+            }
+          </div>
+        }
+      </div>
+    </article>
+  }
+</section>

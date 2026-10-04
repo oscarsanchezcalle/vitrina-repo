@@ -1,0 +1,109 @@
+<section class="products-page" aria-labelledby="products-title">
+  <header class="products-page__header">
+    <div>
+      <h1 id="products-title">Products</h1>
+      <p>Browse, review, and maintain the catalog available in the backend.</p>
+    </div>
+
+    @if (canManage) {
+      <button type="button" (click)="create.emit()">Create product</button>
+    }
+  </header>
+
+  <form class="products-filters" [formGroup]="filterForm" (ngSubmit)="filterSubmitted.emit()" novalidate>
+    <div class="products-filters__field">
+      <label for="searchTerm">Search</label>
+      <input id="searchTerm" type="search" formControlName="searchTerm" placeholder="Name, category, or description" />
+    </div>
+
+    <div class="products-filters__field">
+      <label for="isActive">Status</label>
+      <select id="isActive" formControlName="isActive">
+        <option value="all">All products</option>
+        <option value="true">Active only</option>
+        <option value="false">Inactive only</option>
+      </select>
+    </div>
+
+    <div class="products-filters__actions">
+      <button type="submit">Apply filters</button>
+      <button type="button" (click)="filtersReset.emit()">Reset</button>
+    </div>
+  </form>
+
+  @if (successMessage) {
+    <div aria-live="polite" class="products-message" role="status">
+      {{ successMessage }}
+    </div>
+  }
+
+  @if (errorMessage) {
+    <div aria-live="assertive" class="products-message" role="alert">
+      {{ errorMessage }}
+    </div>
+  }
+
+  @if (loading) {
+    <p aria-live="polite">Loading products…</p>
+  } @else if (hasResults) {
+    <div class="products-grid">
+      @for (product of products; track product.id) {
+        <article class="product-card">
+          @if (product.imageUrl) {
+            <img [src]="product.imageUrl" [alt]="product.name" loading="lazy" />
+          }
+
+          <div class="product-card__content">
+            <div class="product-card__headline">
+              <h2>{{ product.name }}</h2>
+              <span>{{ product.isActive ? 'Active' : 'Inactive' }}</span>
+            </div>
+
+            <dl>
+              <div>
+                <dt>Category</dt>
+                <dd>{{ product.category || 'Uncategorized' }}</dd>
+              </div>
+              <div>
+                <dt>Price</dt>
+                <dd>{{ product.price | currency }}</dd>
+              </div>
+              <div>
+                <dt>Stock</dt>
+                <dd>{{ product.stock }}</dd>
+              </div>
+            </dl>
+
+            <div class="product-card__actions">
+              <button type="button" (click)="view.emit(product.id)">View</button>
+
+              @if (canManage) {
+                <button type="button" (click)="edit.emit(product.id)">Edit</button>
+                @if (pendingDeleteId === product.id) {
+                  <button type="button" [disabled]="deletingId === product.id" (click)="confirmDelete.emit(product.id)">
+                    {{ deletingId === product.id ? 'Deleting…' : 'Confirm delete' }}
+                  </button>
+                  <button type="button" (click)="cancelDelete.emit()">Cancel</button>
+                } @else {
+                  <button type="button" (click)="requestDelete.emit(product.id)">Delete</button>
+                }
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+
+    <nav class="products-pagination" aria-label="Products pagination">
+      <button type="button" [disabled]="pageNumber <= 1" (click)="pageChanged.emit(pageNumber - 1)">
+        Previous
+      </button>
+      <span>Page {{ pageNumber }} of {{ totalPages }}</span>
+      <button type="button" [disabled]="pageNumber >= totalPages" (click)="pageChanged.emit(pageNumber + 1)">
+        Next
+      </button>
+    </nav>
+  } @else {
+    <p aria-live="polite">No products matched the current filters.</p>
+  }
+</section>

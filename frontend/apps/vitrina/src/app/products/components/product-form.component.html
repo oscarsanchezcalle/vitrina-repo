@@ -1,0 +1,90 @@
+<section class="product-form-shell" aria-labelledby="product-form-title">
+  <div class="product-form-shell__header">
+    <h1 id="product-form-title">{{ pageTitle }}</h1>
+    <p>Required fields and validation follow the backend product rules.</p>
+  </div>
+
+  @if (requestError; as errorState) {
+    <div aria-live="assertive" class="product-form-shell__message" role="alert">
+      @if (errorState.message) {
+        <p><strong>{{ errorState.message }}</strong></p>
+      }
+
+      @if (errorState.errors.length) {
+        <ul>
+          @for (error of errorState.errors; track error) {
+            <li>{{ error }}</li>
+          }
+        </ul>
+      }
+    </div>
+  }
+
+  <form class="product-form" [formGroup]="form" (ngSubmit)="submitted.emit()" novalidate>
+    <div class="product-form__field product-form__field--wide">
+      <label for="name">Name</label>
+      <input id="name" type="text" formControlName="name" maxlength="255" [attr.aria-invalid]="fieldInvalid('name')" />
+      @if (fieldInvalid('name')) {
+        <small aria-live="polite">
+          @if (hasError('name', 'required')) {
+            Product name is required.
+          } @else if (hasError('name', 'maxlength')) {
+            Product name cannot exceed 255 characters.
+          }
+        </small>
+      }
+    </div>
+
+    <div class="product-form__field product-form__field--wide">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" maxlength="2000" rows="5"></textarea>
+      @if (fieldInvalid('description') && hasError('description', 'maxlength')) {
+        <small aria-live="polite">Product description cannot exceed 2000 characters.</small>
+      }
+    </div>
+
+    <div class="product-form__field">
+      <label for="price">Price</label>
+      <input id="price" type="number" formControlName="price" min="0" step="0.01" />
+      @if (fieldInvalid('price') && hasError('price', 'min')) {
+        <small aria-live="polite">Product price cannot be negative.</small>
+      }
+    </div>
+
+    <div class="product-form__field">
+      <label for="stock">Stock</label>
+      <input id="stock" type="number" formControlName="stock" min="0" step="1" />
+      @if (fieldInvalid('stock') && hasError('stock', 'min')) {
+        <small aria-live="polite">Product stock cannot be negative.</small>
+      }
+    </div>
+
+    <div class="product-form__field">
+      <label for="category">Category</label>
+      <input id="category" type="text" formControlName="category" maxlength="100" />
+      @if (fieldInvalid('category') && hasError('category', 'maxlength')) {
+        <small aria-live="polite">Product category cannot exceed 100 characters.</small>
+      }
+    </div>
+
+    <div class="product-form__field">
+      <label for="imageUrl">Image URL</label>
+      <input id="imageUrl" type="url" formControlName="imageUrl" maxlength="500" />
+      @if (fieldInvalid('imageUrl') && hasError('imageUrl', 'maxlength')) {
+        <small aria-live="polite">Product image URL cannot exceed 500 characters.</small>
+      }
+    </div>
+
+    <label class="product-form__toggle">
+      <input type="checkbox" formControlName="isActive" />
+      <span>Active product</span>
+    </label>
+
+    <div class="product-form__actions">
+      <button type="submit" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Saving…' : submitLabel }}
+      </button>
+      <button type="button" (click)="cancelled.emit()">Cancel</button>
+    </div>
+  </form>
+</section>

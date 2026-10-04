@@ -1,0 +1,18 @@
+<section class="product-editor-page">
+  @if (isLoading()) {
+    <p aria-live="polite">Loading product editor…</p>
+  } @else if (loadError()) {
+    <div aria-live="assertive" role="alert">{{ loadError() }}</div>
+    <button type="button" (click)="cancel()">Back</button>
+  } @else {
+    <app-product-form
+      [form]="form"
+      [pageTitle]="pageTitle"
+      [submitLabel]="submitLabel"
+      [isSubmitting]="isSubmitting()"
+      [requestError]="requestError()"
+      (submitted)="submit()"
+      (cancelled)="cancel()"
+    ></app-product-form>
+  }
+</section>

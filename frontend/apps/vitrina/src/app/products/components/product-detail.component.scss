@@ -1,0 +1,66 @@
+:host {
+  display: block;
+}
+
+.product-detail {
+  display: grid;
+  gap: 1rem;
+}
+
+.product-detail__card {
+  border: 1px solid currentColor;
+  display: grid;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.product-detail__card img {
+  aspect-ratio: 16 / 9;
+  inline-size: 100%;
+  object-fit: cover;
+}
+
+.product-detail__content {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.product-detail__headline,
+.product-detail__actions {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.product-detail__headline h1,
+.product-detail__headline p,
+.product-detail__content p,
+.product-detail__content dl,
+.product-detail__content dd {
+  margin: 0;
+}
+
+.product-detail__content dl {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.product-detail__content dl div {
+  display: grid;
+  gap: 0.125rem;
+}
+
+button {
+  cursor: pointer;
+  min-height: 2.5rem;
+}
+
+@media (max-width: 720px) {
+  .product-detail__headline,
+  .product-detail__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
