@@ -1,0 +1,47 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    platform: linux/amd64
+    container_name: vitrina-sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${VITRINA_DB_SA_PASSWORD:-Vitrina_Strong_Password_123!}
+      MSSQL_PID: Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    restart: unless-stopped
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: vitrina-api
+    depends_on:
+      - sqlserver
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: Data Source=sqlserver,1433;Initial Catalog=${VITRINA_DB_NAME:-VitrinaDb};Persist Security Info=True;User ID=sa;Password=${VITRINA_DB_SA_PASSWORD:-Vitrina_Strong_Password_123!};Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Application Name=Vitrina;
+      Jwt__Issuer: ${VITRINA_JWT_ISSUER:-Vitrina}
+      Jwt__Audience: ${VITRINA_JWT_AUDIENCE:-Vitrina}
+      Jwt__Key: ${VITRINA_JWT_KEY:-CHANGE_THIS_SUPER_SECRET_KEY_TO_A_LONG_RANDOM_VALUE_1234567890}
+      Jwt__ExpirationMinutes: ${VITRINA_JWT_EXPIRATION_MINUTES:-120}
+    ports:
+      - "5188:8080"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: vitrina-frontend
+    depends_on:
+      - api
+    ports:
+      - "4200:80"
+    restart: unless-stopped
+
+volumes:
+  sqlserver-data:

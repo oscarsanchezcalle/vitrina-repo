@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+.angular/
+.nx/
+.vscode/
+.git/
+.gitignore
+README.md
