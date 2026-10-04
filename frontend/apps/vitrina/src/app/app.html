@@ -1,0 +1,27 @@
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<div class="app-shell">
+  <header class="app-shell__header">
+    <div class="app-shell__brand-group">
+      <a class="app-shell__brand" routerLink="/">{{ title }}</a>
+      <p class="app-shell__subtitle">Frontend administration for products and access</p>
+    </div>
+
+    @if (session; as currentSession) {
+      <div class="app-shell__session" aria-label="Current session">
+        <div class="app-shell__session-copy">
+          <strong>{{ currentSession.name }}</strong>
+          <span>{{ currentSession.role }}</span>
+        </div>
+
+        <button class="app-shell__action" type="button" (click)="signOut()">
+          Sign out
+        </button>
+      </div>
+    }
+  </header>
+
+  <main id="main-content" class="app-shell__content" tabindex="-1">
+    <router-outlet></router-outlet>
+  </main>
+</div>
