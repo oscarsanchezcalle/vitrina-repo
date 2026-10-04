@@ -1,24 +1,24 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 18
+VisualStudioVersion = 18.9.12120.119 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Dto", "src\3. Vitrina.Dto\Vitrina.Dto.csproj", "{E902B88A-C03A-46A9-8593-9B89321EACE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Dto", "src\\3. Vitrina.Dto\\Vitrina.Dto.csproj", "{E902B88A-C03A-46A9-8593-9B89321EACE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Business", "src\2. Vitrina.Business\Vitrina.Business.csproj", "{8B0417A0-AB62-48CE-9164-E061ADCC7163}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Business", "src\\2. Vitrina.Business\\Vitrina.Business.csproj", "{8B0417A0-AB62-48CE-9164-E061ADCC7163}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Data", "src\4. Vitrina.Data\Vitrina.Data.csproj", "{2B5F2704-4243-4734-832E-B3AA1F73DD19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Data", "src\\4. Vitrina.Data\\Vitrina.Data.csproj", "{2B5F2704-4243-4734-832E-B3AA1F73DD19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Api", "src\1. Vitrina.Api\Vitrina.Api.csproj", "{D0E3816A-C1E1-4C1E-8B87-3C02796562C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Api", "src\\1. Vitrina.Api\\Vitrina.Api.csproj", "{D0E3816A-C1E1-4C1E-8B87-3C02796562C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Business.Tests", "src\5. Tests\Vitrina.Business.Tests\Vitrina.Business.Tests.csproj", "{AF2D6FBF-8EA5-4923-BFE7-025912227F94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Business.Tests", "src\\5. Tests\\Vitrina.Business.Tests\\Vitrina.Business.Tests.csproj", "{AF2D6FBF-8EA5-4923-BFE7-025912227F94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Data.Tests", "src\5. Tests\Vitrina.Data.Tests\Vitrina.Data.Tests.csproj", "{905C6C1C-C5E4-4CCE-B1C9-B44EA46BD61C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Data.Tests", "src\\5. Tests\\Vitrina.Data.Tests\\Vitrina.Data.Tests.csproj", "{905C6C1C-C5E4-4CCE-B1C9-B44EA46BD61C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Api.Tests", "src\5. Tests\Vitrina.Api.Tests\Vitrina.Api.Tests.csproj", "{7E3C1AA8-69B9-4755-BC2A-A7BFCBBDE303}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Api.Tests", "src\\5. Tests\\Vitrina.Api.Tests\\Vitrina.Api.Tests.csproj", "{7E3C1AA8-69B9-4755-BC2A-A7BFCBBDE303}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{81E96FC5-5E6A-4546-82F6-2ED2B4A5288F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,12 +123,8 @@ Global
 		{8B0417A0-AB62-48CE-9164-E061ADCC7163} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{2B5F2704-4243-4734-832E-B3AA1F73DD19} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{D0E3816A-C1E1-4C1E-8B87-3C02796562C2} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{AF2D6FBF-8EA5-4923-BFE7-025912227F94} = {81E96FC5-5E6A-4546-82F6-2ED2B4A5288F}
+		{905C6C1C-C5E4-4CCE-B1C9-B44EA46BD61C} = {81E96FC5-5E6A-4546-82F6-2ED2B4A5288F}
+		{7E3C1AA8-69B9-4755-BC2A-A7BFCBBDE303} = {81E96FC5-5E6A-4546-82F6-2ED2B4A5288F}
 	EndGlobalSection
 EndGlobal
-
-
-
-
-
-
-
