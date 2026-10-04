@@ -2,9 +2,78 @@
   display: block;
 }
 
+// Capa a pantalla completa para cubrir el shell mientras se muestra el login.
 .login-page {
   align-items: center;
+  animation: gradient-shift 16s ease infinite;
+  background: linear-gradient(135deg, #1e1b4b, #4c1d95, #be185d, #0ea5e9);
+  background-size: 300% 300%;
+  color: #f8fafc;
   display: grid;
-  min-height: min(100%, calc(100dvh - 10rem));
-  padding-block: 2rem;
+  inset: 0;
+  overflow: hidden;
+  padding: 1.5rem;
+  position: fixed;
+  z-index: 20;
+}
+
+.login-page__blob {
+  animation: float 14s ease-in-out infinite;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0.5;
+  pointer-events: none;
+  position: absolute;
+}
+
+.login-page__blob--1 {
+  height: 22rem;
+  left: -6rem;
+  top: -6rem;
+  width: 22rem;
+}
+
+.login-page__blob--2 {
+  animation-delay: -5s;
+  animation-duration: 18s;
+  bottom: -8rem;
+  height: 28rem;
+  right: -8rem;
+  width: 28rem;
+}
+
+.login-page__blob--3 {
+  animation-delay: -9s;
+  height: 14rem;
+  right: 25%;
+  top: 10%;
+  width: 14rem;
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, -30px) scale(1.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-page,
+  .login-page__blob {
+    animation: none;
+  }
 }
