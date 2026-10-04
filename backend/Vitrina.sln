@@ -1,11 +1,10 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Domain", "src\Vitrina.Domain\Vitrina.Domain.csproj", "{66793012-C070-4E24-8515-4D4C92106158}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrina.Dto", "src\Vitrina.Dto\Vitrina.Dto.csproj", "{E902B88A-C03A-46A9-8593-9B89321EACE3}"
 EndProject
@@ -31,18 +30,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{66793012-C070-4E24-8515-4D4C92106158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66793012-C070-4E24-8515-4D4C92106158}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66793012-C070-4E24-8515-4D4C92106158}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{66793012-C070-4E24-8515-4D4C92106158}.Debug|x64.Build.0 = Debug|Any CPU
-		{66793012-C070-4E24-8515-4D4C92106158}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{66793012-C070-4E24-8515-4D4C92106158}.Debug|x86.Build.0 = Debug|Any CPU
-		{66793012-C070-4E24-8515-4D4C92106158}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66793012-C070-4E24-8515-4D4C92106158}.Release|Any CPU.Build.0 = Release|Any CPU
-		{66793012-C070-4E24-8515-4D4C92106158}.Release|x64.ActiveCfg = Release|Any CPU
-		{66793012-C070-4E24-8515-4D4C92106158}.Release|x64.Build.0 = Release|Any CPU
-		{66793012-C070-4E24-8515-4D4C92106158}.Release|x86.ActiveCfg = Release|Any CPU
-		{66793012-C070-4E24-8515-4D4C92106158}.Release|x86.Build.0 = Release|Any CPU
 		{E902B88A-C03A-46A9-8593-9B89321EACE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E902B88A-C03A-46A9-8593-9B89321EACE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E902B88A-C03A-46A9-8593-9B89321EACE3}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -132,7 +119,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{66793012-C070-4E24-8515-4D4C92106158} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{E902B88A-C03A-46A9-8593-9B89321EACE3} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{8B0417A0-AB62-48CE-9164-E061ADCC7163} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{2B5F2704-4243-4734-832E-B3AA1F73DD19} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
