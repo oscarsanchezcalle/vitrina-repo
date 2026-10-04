@@ -2,6 +2,8 @@
 
 Simple setup guide for running the project locally.
 
+For an overview of the solution architecture, see the [Vitrina architecture presentation](docs/Vitrina%20app.pdf).
+
 ## What is included
 
 - `frontend/` - Angular application
