@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { ValidationResult } from '../../core/interfaces/validation-result.interface';
+import { ValidationResult } from '../../../core/interfaces/validation-result.interface';
 
 @Component({
   selector: 'app-product-form',

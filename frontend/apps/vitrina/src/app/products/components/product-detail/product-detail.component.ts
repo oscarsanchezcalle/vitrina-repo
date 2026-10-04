@@ -1,6 +1,6 @@
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Product } from '../interfaces/product.interface';
+import { Product } from '../../interfaces/product.interface';
 
 @Component({
   selector: 'app-product-detail',
