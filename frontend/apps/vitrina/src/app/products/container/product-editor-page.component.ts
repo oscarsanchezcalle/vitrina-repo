@@ -6,7 +6,7 @@ import { ValidationResult } from '../../core/interfaces/validation-result.interf
 import { FlashMessageService } from '../../core/services/flash-message.service';
 import { ProductsApiService } from '../../core/services/products-api.service';
 import { extractValidationResult } from '../../core/utilities/extract-validation-result';
-import { ProductFormComponent } from '../components/product-form.component';
+import { ProductFormComponent } from '../components/product-form/product-form.component';
 import { CreateProductRequest } from '../interfaces/create-product-request.interface';
 import { Product } from '../interfaces/product.interface';
 import { UpdateProductRequest } from '../interfaces/update-product-request.interface';

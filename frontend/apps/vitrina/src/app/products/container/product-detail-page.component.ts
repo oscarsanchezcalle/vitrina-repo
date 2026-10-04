@@ -5,7 +5,7 @@ import { FlashMessageService } from '../../core/services/flash-message.service';
 import { ProductsApiService } from '../../core/services/products-api.service';
 import { SessionService } from '../../core/services/session.service';
 import { extractValidationResult } from '../../core/utilities/extract-validation-result';
-import { ProductDetailComponent } from '../components/product-detail.component';
+import { ProductDetailComponent } from '../components/product-detail/product-detail.component';
 import { Product } from '../interfaces/product.interface';
 
 @Component({

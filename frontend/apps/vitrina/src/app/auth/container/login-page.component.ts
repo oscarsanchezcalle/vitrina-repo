@@ -7,7 +7,7 @@ import { AuthApiService } from '../../core/services/auth-api.service';
 import { ValidationResult } from '../../core/interfaces/validation-result.interface';
 import { SessionService } from '../../core/services/session.service';
 import { extractValidationResult } from '../../core/utilities/extract-validation-result';
-import { LoginFormComponent } from '../components/login-form.component';
+import { LoginFormComponent } from '../components/login/login-form.component';
 
 @Component({
   selector: 'app-login-page',

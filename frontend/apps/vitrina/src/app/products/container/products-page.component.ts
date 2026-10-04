@@ -7,7 +7,7 @@ import { FlashMessageService } from '../../core/services/flash-message.service';
 import { ProductsApiService } from '../../core/services/products-api.service';
 import { SessionService } from '../../core/services/session.service';
 import { extractValidationResult } from '../../core/utilities/extract-validation-result';
-import { ProductListComponent } from '../components/product-list.component';
+import { ProductListComponent } from '../components/product-list/product-list.component';
 import { Product } from '../interfaces/product.interface';
 import { ProductSearchCriteria } from '../interfaces/product-search-criteria.interface';
 
