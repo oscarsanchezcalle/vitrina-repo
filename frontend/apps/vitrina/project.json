@@ -1,0 +1,93 @@
+{
+  "name": "vitrina",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/vitrina/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular/build:application",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/vitrina",
+        "browser": "apps/vitrina/src/main.ts",
+        "tsConfig": "apps/vitrina/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/vitrina/public"
+          }
+        ],
+        "styles": [
+          "apps/vitrina/src/styles.scss"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/vitrina/src/environments/environment.ts",
+              "with": "apps/vitrina/src/environments/environment.production.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      }
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@angular/build:dev-server",
+      "defaultConfiguration": "development",
+      "configurations": {
+        "production": {
+          "buildTarget": "vitrina:build:production"
+        },
+        "development": {
+          "buildTarget": "vitrina:build:development",
+          "proxyConfig": "apps/vitrina/proxy.conf.json"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "apps/vitrina/jest.config.cts",
+        "tsConfig": "apps/vitrina/tsconfig.spec.json"
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "vitrina:build",
+        "staticFilePath": "dist/apps/vitrina/browser",
+        "spa": true
+      }
+    }
+  }
+}
