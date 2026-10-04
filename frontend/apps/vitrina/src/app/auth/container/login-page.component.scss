@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.login-page {
+  align-items: center;
+  display: grid;
+  min-height: min(100%, calc(100dvh - 10rem));
+  padding-block: 2rem;
+}

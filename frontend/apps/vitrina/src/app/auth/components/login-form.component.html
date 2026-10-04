@@ -1,0 +1,60 @@
+<section class="login-card" aria-labelledby="login-title">
+  <div class="login-card__copy">
+    <h1 id="login-title">Sign in</h1>
+    <p>Use your Vitrina credentials to manage product inventory.</p>
+  </div>
+
+  @if (requestError; as errorState) {
+    <div class="login-card__message" aria-live="assertive" role="alert">
+      @if (errorState.message) {
+        <p><strong>{{ errorState.message }}</strong></p>
+      }
+
+      @if (errorState.errors.length) {
+        <ul>
+          @for (error of errorState.errors; track error) {
+            <li>{{ error }}</li>
+          }
+        </ul>
+      }
+    </div>
+  }
+
+  <form class="login-form" [formGroup]="form" (ngSubmit)="submitted.emit()" novalidate>
+    <div class="login-form__field">
+      <label for="username">Username</label>
+      <input
+        id="username"
+        type="text"
+        formControlName="username"
+        autocomplete="username"
+        [attr.aria-invalid]="usernameInvalid"
+        aria-describedby="username-hint username-error"
+      />
+      <small id="username-hint">Required.</small>
+      @if (usernameInvalid) {
+        <small id="username-error" aria-live="polite">Username is required.</small>
+      }
+    </div>
+
+    <div class="login-form__field">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        autocomplete="current-password"
+        [attr.aria-invalid]="passwordInvalid"
+        aria-describedby="password-hint password-error"
+      />
+      <small id="password-hint">Required.</small>
+      @if (passwordInvalid) {
+        <small id="password-error" aria-live="polite">Password is required.</small>
+      }
+    </div>
+
+    <button type="submit" [disabled]="isSubmitting">
+      {{ isSubmitting ? 'Signing in…' : 'Sign in' }}
+    </button>
+  </form>
+</section>

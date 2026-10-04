@@ -1,0 +1,8 @@
+<section class="login-page">
+  <app-login-form
+    [form]="form"
+    [isSubmitting]="isSubmitting()"
+    [requestError]="requestError()"
+    (submitted)="submit()"
+  ></app-login-form>
+</section>
